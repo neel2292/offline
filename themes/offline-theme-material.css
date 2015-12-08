@@ -1,0 +1,491 @@
+.offline-ui,
+.offline-ui *,
+.offline-ui:before,
+.offline-ui:after,
+.offline-ui *:before,
+.offline-ui *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.offline-ui {
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+    border-radius: 1px;
+    display: none;
+    position: fixed;
+    background: white;
+    z-index: 2000;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.offline-ui .offline-ui-content:before {
+    display: inline;
+}
+
+.offline-ui .offline-ui-retry {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    display: none;
+}
+
+.offline-ui .offline-ui-retry:before {
+    display: inline;
+}
+
+.offline-ui.offline-ui-up.offline-ui-up-5s {
+    display: block;
+}
+
+.offline-ui.offline-ui-down {
+    display: block;
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-retry {
+    display: block;
+}
+
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s.offline-ui-waiting .offline-ui-retry {
+    display: none;
+}
+
+@-webkit-keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@-moz-keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@-ms-keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@-o-keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@-webkit-keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@-moz-keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@-ms-keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@-o-keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@-webkit-keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        -webkit-transform: scale(.1);
+        -moz-transform: scale(.1);
+        -ms-transform: scale(.1);
+        -o-transform: scale(.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        -webkit-transform: scale(.1);
+        -moz-transform: scale(.1);
+        -ms-transform: scale(.1);
+        -o-transform: scale(.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        -webkit-transform: scale(.1);
+        -moz-transform: scale(.1);
+        -ms-transform: scale(.1);
+        -o-transform: scale(.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        -webkit-transform: scale(.1);
+        -moz-transform: scale(.1);
+        -ms-transform: scale(.1);
+        -o-transform: scale(.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.offline-ui {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    padding: 1em;
+    top: 1em;
+    width: 38em;
+    max-width: 100%;
+    box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.10), 0px 4px 12px -7px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+@media (max-width: 38em) {
+    .offline-ui {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        top: 0;
+    }
+}
+
+.offline-ui .offline-ui-content:before {
+    line-height: 1.25em;
+}
+
+.offline-ui .offline-ui-retry {
+    position: absolute;
+    right: 3em;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    line-height: 3.5em;
+    height: 3.5em;
+    margin: auto;
+    padding: 0 1em;
+}
+
+.offline-ui.offline-ui-up {
+    -webkit-animation: offline-slideOut forwards 0.5s 2s;
+    -moz-animation: offline-slideOut forwards 0.5s 2s;
+    -ms-animation: offline-slideOut forwards 0.5s 2s;
+    -o-animation: offline-slideOut forwards 0.5s 2s;
+    animation: offline-slideOut forwards 0.5s 2s;
+    -webkit-backface-visibility: hidden;
+    background: #4CAF50;
+    color: #FFFFFF;
+}
+
+.offline-ui.offline-ui-down {
+    -webkit-animation: offline-slideIn 0.5s;
+    -moz-animation: offline-slideIn 0.5s;
+    -ms-animation: offline-slideIn 0.5s;
+    -o-animation: offline-slideIn 0.5s;
+    animation: offline-slideIn 0.5s;
+    -webkit-backface-visibility: hidden;
+    background: #F44336;
+    color: #FFFFFF;
+}
+
+.offline-ui.offline-ui-down.offline-ui-connecting,
+.offline-ui.offline-ui-down.offline-ui-waiting {
+    background: #FF9800;
+    color: #FFFFFF;
+    padding-right: 3em;
+}
+
+.offline-ui.offline-ui-down.offline-ui-connecting:after,
+.offline-ui.offline-ui-down.offline-ui-waiting:after {
+    -webkit-animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    -moz-animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    -ms-animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    -o-animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    -webkit-backface-visibility: hidden;
+    content: " ";
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 1em;
+    width: 1em;
+    border: 5px solid #263238;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting {
+    padding-right: 11em;
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting.offline-ui-reconnect-failed-2s {
+    padding-right: 0;
+}
+
+.offline-ui .offline-ui-retry:before {
+    content: "Reconnect";
+}
+
+.offline-ui.offline-ui-up .offline-ui-content:before {
+    content: "Your computer is connected to the internet.";
+}
+
+@media (max-width: 1024px) {
+    .offline-ui.offline-ui-up .offline-ui-content:before {
+        content: "Your device is connected to the internet.";
+    }
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-up .offline-ui-content:before {
+        content: "Your device is connected.";
+    }
+}
+
+.offline-ui.offline-ui-down .offline-ui-content:before {
+    content: "Your computer lost its internet connection.";
+}
+
+@media (max-width: 1024px) {
+    .offline-ui.offline-ui-down .offline-ui-content:before {
+        content: "Your device lost its internet connection.";
+    }
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down .offline-ui-content:before {
+        content: "Your device isn't connected.";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-connecting .offline-ui-content:before,
+.offline-ui.offline-ui-down.offline-ui-connecting-2s .offline-ui-content:before {
+    content: "Attempting to reconnect...";
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " seconds...";
+}
+
+@media (max-width: 568px) {
+    /* line 42, ../sass/_content.sass */
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "s...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"][data-retry-in-value="1"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " second...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"][data-retry-in-value="1"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "s...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " minutes...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "m...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"][data-retry-in-value="1"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " minute...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"][data-retry-in-value="1"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "m...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " hours...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "h...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"][data-retry-in-value="1"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " hour...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"][data-retry-in-value="1"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "h...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s.offline-ui-waiting .offline-ui-retry {
+    display: none;
+}
+
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s .offline-ui-content:before {
+    content: "Connection attempt failed.";
+}
